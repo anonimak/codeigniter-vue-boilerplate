@@ -1,17 +1,17 @@
-const meta = document.getElementsByTagName('meta')
+const meta = document.getElementsByTagName('meta');
 
-let baseUrl = meta['base-url']['content']
+let baseUrl = meta['base-url']['content'];
 
 // Remove http/https prefix
-baseUrl = baseUrl.replace(/htt(p|ps):\/\//gi, "");
+baseUrl = baseUrl.replace(/htt(p|ps):\/\//gi, '');
 
 // Find first slash position to remove domain name
-const slashIndex = baseUrl.indexOf('/')
-baseUrl = baseUrl.substring(slashIndex)
+const slashIndex = baseUrl.indexOf('/');
+baseUrl = baseUrl.substring(slashIndex);
 
-const siteUrl = baseUrl + 'index.php'
+console.log(baseUrl);
 
-export {
-  baseUrl,
-  siteUrl
-}
+// const siteUrl = baseUrl + 'index.php';
+const siteUrl = '';
+
+export { baseUrl, siteUrl };

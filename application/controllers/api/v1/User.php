@@ -1,10 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends MY_Controller {
-    
+class User extends MY_Controller
+{
+
     // All method must called by ajax request
-    protected $ajax_request_only = TRUE;
+    protected $ajax_request_only = FALSE;
 
     /**
      * Limit method access with middlewares
@@ -20,7 +21,7 @@ class User extends MY_Controller {
         [
             'name' => 'role',
             'behavior' => [
-                'type' => 'only', 
+                'type' => 'only',
                 'methods' => ['show']
             ],
             'extras' => [
@@ -43,10 +44,10 @@ class User extends MY_Controller {
         parent::__construct();
     }
 
-	public function index()
-	{
+    public function index()
+    {
         return send_success_response($this->users);
-	}
+    }
 
     public function show($id)
     {
